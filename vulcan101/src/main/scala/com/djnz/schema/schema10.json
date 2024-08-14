@@ -1,0 +1,7 @@
+{
+  "type": "fixed",
+  "name": "Pence",
+  "namespace": "com.example",
+  "doc": "Amount of pence as a single byte",
+  "size": 1
+}

@@ -1,0 +1,11 @@
+{
+  "type": "enum",
+  "name": "Color",
+  "namespace": "com.example",
+  "doc": "The available colors",
+  "symbols": [
+    "red",
+    "green",
+    "blue"
+  ]
+}

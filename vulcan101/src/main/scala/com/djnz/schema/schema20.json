@@ -1,0 +1,35 @@
+[
+  {
+    "type": "record",
+    "name": "First",
+    "namespace": "com.djnz",
+    "fields": [
+      {
+        "name": "value",
+        "type": "int"
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "name": "Second",
+    "namespace": "com.djnz",
+    "fields": [
+      {
+        "name": "value",
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "name": "Third",
+    "namespace": "com.djnz",
+    "fields": [
+      {
+        "name": "value",
+        "type": "double"
+      }
+    ]
+  }
+]

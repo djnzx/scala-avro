@@ -1,0 +1,23 @@
+{
+  "type": "record",
+  "name": "Person",
+  "namespace": "com.djnz",
+  "doc": "Person with a first name, last name, and optional age",
+  "fields": [
+    {
+      "name": "firstName",
+      "type": "string"
+    },
+    {
+      "name": "lastName",
+      "type": "string"
+    },
+    {
+      "name": "age",
+      "type": [
+        "null",
+        "int"
+      ]
+    }
+  ]
+}

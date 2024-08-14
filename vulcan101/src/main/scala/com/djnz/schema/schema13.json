@@ -1,0 +1,12 @@
+{
+  "type": "enum",
+  "name": "Suit",
+  "namespace": "com.example",
+  "doc": "The different card suits",
+  "symbols": [
+    "clubs",
+    "diamonds",
+    "hearts",
+    "spades"
+  ]
+}

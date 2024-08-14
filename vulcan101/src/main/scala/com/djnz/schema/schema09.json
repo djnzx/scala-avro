@@ -1,0 +1,12 @@
+{
+  "type": "enum",
+  "name": "Fruit",
+  "namespace": "com.example",
+  "doc": "A selection of different fruits",
+  "symbols": [
+    "apple",
+    "banana",
+    "cherry"
+  ],
+  "default": "banana"
+}

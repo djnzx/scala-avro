@@ -1,0 +1,67 @@
+{
+  "type": "record",
+  "name": "Order",
+  "namespace": "com.djnz.Fundamentals.m18",
+  "fields": [
+    {
+      "name": "number",
+      "type": "string"
+    },
+    {
+      "name": "amount",
+      "type": "double"
+    },
+    {
+      "name": "status",
+      "type": [
+        {
+          "type": "record",
+          "name": "Delivered",
+          "namespace": "com.djnz.Fundamentals.m18.Status",
+          "fields": [
+            {
+              "name": "at",
+              "type": "long"
+            }
+          ]
+        },
+        {
+          "type": "record",
+          "name": "Paid",
+          "namespace": "com.djnz.Fundamentals.m18.Status",
+          "fields": [
+            {
+              "name": "amount",
+              "type": "double"
+            }
+          ]
+        },
+        {
+          "type": "record",
+          "name": "Placed",
+          "namespace": "com.djnz.Fundamentals.m18.Status",
+          "fields": [
+            {
+              "name": "date",
+              "type": {
+                "type": "long",
+                "logicalType": "timestamp-millis"
+              }
+            }
+          ]
+        },
+        {
+          "type": "record",
+          "name": "Shipped",
+          "namespace": "com.djnz.Fundamentals.m18.Status",
+          "fields": [
+            {
+              "name": "by",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

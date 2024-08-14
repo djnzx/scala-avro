@@ -1,0 +1,31 @@
+{
+  "type": "record",
+  "name": "Order",
+  "namespace": "com.djnz.Fundamentals.m17",
+  "fields": [
+    {
+      "name": "number",
+      "type": "string"
+    },
+    {
+      "name": "amount",
+      "type": "double"
+    },
+    {
+      "name": "status",
+      "type": [
+        "null",
+        {
+          "type": "enum",
+          "name": "Status",
+          "symbols": [
+            "placed",
+            "paid",
+            "shipped",
+            "delivered"
+          ]
+        }
+      ]
+    }
+  ]
+}

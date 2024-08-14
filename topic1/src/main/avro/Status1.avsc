@@ -1,0 +1,11 @@
+{
+  "type": "record",
+  "name": "Status1",
+  "namespace": "com.djnz.avro",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string"
+    }
+  ]
+}

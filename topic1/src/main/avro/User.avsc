@@ -1,0 +1,24 @@
+{
+  "type": "record",
+  "name": "User",
+  "namespace": "com.djnz.avro",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "age",
+      "type": "int"
+    },
+    {
+      "name": "status",
+      "type": [
+        "null",
+        "Status1",
+        "Status2",
+        "Status3"
+      ]
+    }
+  ]
+}
