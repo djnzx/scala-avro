@@ -50,6 +50,7 @@ lazy val vulcan101 = (project in file("vulcan101"))
   .enablePlugins(NoPublishPlugin)
   .settings(commonSettings)
   .settings(
+    crossScalaVersions := Seq(Versions.scala213),
     libraryDependencies ++= Seq(
       "org.apache.avro"  % "avro"              % "1.11.3", // fasterxml.jackson
       "com.github.fd4s" %% "vulcan"            % "1.11.0", // apache avro + cats-free monad
