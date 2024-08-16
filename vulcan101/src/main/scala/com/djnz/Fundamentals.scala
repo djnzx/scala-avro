@@ -93,6 +93,42 @@ object Fundamentals {
     val c = Codec.derive[Progress]
   }
 
+  object m23 {
+    import vulcan.generic._
+
+    @AvroNamespace("djnz")
+    case class Progress(
+      brandId: String,
+      playerUUID: String,
+      campaignUUID: String,
+      version: String,
+      update: Progress.Update
+    )
+
+    object Progress {
+      sealed trait Update
+      object Update {
+        sealed trait LevelUps extends Update
+        object LevelUps {
+          @AvroNamespace("djnz")
+          case class Achieved(levels: NonEmptyList[String]) extends LevelUps
+          @AvroNamespace("djnz")
+          case class Triggered(levels: NonEmptyList[String]) extends LevelUps
+        }
+        @AvroNamespace("djnz")
+        case class GrantRewards(rewards: NonEmptySet[String]) extends Update
+        @AvroNamespace("djnz")
+        case class CompleteRewards(rewards: NonEmptySet[String]) extends Update
+        @AvroNamespace("djnz")
+        case object Expire extends Update
+        implicit val c: Codec[Update] = Codec.derive
+      }
+    }
+
+    implicit val c0 = Codec.derive[Progress.Update]
+    val c = Codec.derive[Progress]
+  }
+
 }
 
 class Fundamentals extends AnyFunSuite with Matchers with ScalaCheckPropertyChecks with Inside with Tools {
@@ -402,8 +438,14 @@ class Fundamentals extends AnyFunSuite with Matchers with ScalaCheckPropertyChec
     pprint.log(represent(c.schema.value.toString))
   }
 
-  test("22. shapeless coproduct") {
+  test("22. some more - real example") {
     import Fundamentals.m22._
+    pprint.log(c.schema.value.toString(true))
+    pprint.log(represent(c.schema.value.toString))
+  }
+
+  test("23. some more - real example") {
+    import Fundamentals.m23._
     pprint.log(c.schema.value.toString(true))
     pprint.log(represent(c.schema.value.toString))
   }
